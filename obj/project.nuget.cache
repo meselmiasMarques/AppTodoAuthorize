@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HandUyqvkjcRluo7gEoF9Ez0Z1mGDVstSlVQs2silg60jGiPsDYKlsZIbc3HOWs+alxEWzQ8q43lyzcDS5pGgA==",
+  "dgSpecHash": "kRWnvMFBrqMwQF8rU8kEopWZQmZbej4UtoPYqb6nY+bSsqleyfucYTOo4da/OD4aRHer2nE9YlQX9cLM774xSw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mesel\\OneDrive\\Área de Trabalho\\DEV\\MyTodoApp\\MyTodoApp.csproj",
+  "projectFilePath": "C:\\Users\\mesel\\OneDrive\\Área de Trabalho\\DEV\\MyTodoApp\\AppTodoAuthorize\\MyTodoApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mesel\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\mesel\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.17\\microsoft.aspnetcore.cryptography.internal.5.0.17.nupkg.sha512",

@@ -9,19 +9,19 @@ namespace MyTodoApp.Models
 
         [DisplayName("Título")]
         [Required( ErrorMessage = "Campo Obrigatório")]
-         public string Title {get;set;}
+        public string Title {get;set;}
 
         [DisplayName("Concluído")]
-         public bool Done{ get; set; }
+        public bool Done{ get; set; }
 
-         [DisplayName("Criado em")]
-         public DateTime CreatedAt { get; set; } = DateTime.Now;
+        [DisplayName("Criado em")]
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
         
         [DisplayName("Atualizado em")]
-         public DateTime LastUpdateDate { get; set; } = DateTime.Now;
+        public DateTime LastUpdateDate { get; set; } = DateTime.Now;
 
         [DisplayName("Usuário")]
-         public string User { get; set; }
+        public string User { get; set; }
 
     }
 }

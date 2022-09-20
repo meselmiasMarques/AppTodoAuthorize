@@ -5049,11 +5049,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mesel\\OneDrive\\Área de Trabalho\\DEV\\MyTodoApp\\MyTodoApp.csproj",
+      "projectUniqueName": "C:\\Users\\mesel\\OneDrive\\Área de Trabalho\\DEV\\MyTodoApp\\AppTodoAuthorize\\MyTodoApp.csproj",
       "projectName": "MyTodoApp",
-      "projectPath": "C:\\Users\\mesel\\OneDrive\\Área de Trabalho\\DEV\\MyTodoApp\\MyTodoApp.csproj",
+      "projectPath": "C:\\Users\\mesel\\OneDrive\\Área de Trabalho\\DEV\\MyTodoApp\\AppTodoAuthorize\\MyTodoApp.csproj",
       "packagesPath": "C:\\Users\\mesel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mesel\\OneDrive\\Área de Trabalho\\DEV\\MyTodoApp\\obj\\",
+      "outputPath": "C:\\Users\\mesel\\OneDrive\\Área de Trabalho\\DEV\\MyTodoApp\\AppTodoAuthorize\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

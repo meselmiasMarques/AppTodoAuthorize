@@ -1,10 +1,8 @@
-using System;
-using System.Collections.Generic;
+
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MyTodoApp.Data;
 using MyTodoApp.Models;
@@ -21,7 +19,6 @@ namespace MyTodoApp
             _context = context;
         }
 
-        // GET: Todo
         public async Task<IActionResult> Index()
         {
             return View(await _context.Todos
@@ -30,7 +27,6 @@ namespace MyTodoApp
             .ToListAsync());
         }
 
-        // GET: Todo/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -58,24 +54,20 @@ namespace MyTodoApp
             return View();
         }
 
-        // POST: Todo/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title")] Todo todo)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                todo.User = User.Identity.Name;
-                _context.Add(todo);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return View(todo);
             }
-            return View(todo);
+            todo.User = User.Identity.Name;
+            _context.Add(todo);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
-        // GET: Todo/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -84,10 +76,12 @@ namespace MyTodoApp
             }
 
             var todo = await _context.Todos.FindAsync(id);
+
             if (todo == null)
             {
                 return NotFound();
             }
+
               if(todo.User != User.Identity.Name){
                 return NotFound();
             }
@@ -95,12 +89,10 @@ namespace MyTodoApp
             return View(todo);
         }
 
-        // POST: Todo/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+    
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Done,CreatedAt,LastUpdateDate,User")] Todo todo)
+        public async Task<IActionResult> Edit(int id, Todo todo)
         {
             if (id != todo.Id)
             {
