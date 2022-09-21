@@ -1,13 +1,9 @@
 @model IEnumerable<MyTodoApp.Models.Todo>
-
-
-
 <p>
-    <a class="btn btn-primary" asp-action="Create"><i class="bi bi-plus-square"></i></a>
+    <a class="btn btn-primary create"><i class="bi bi-plus-square"></i></a>
 </p>
 
 <div class="row">
-
     <table class="table">
         <thead>
             <tr>
@@ -49,14 +45,55 @@
                         @Html.DisplayFor(modelItem => item.User)
                     </td>
                     <td>
-                        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-search"></i></a> |
-                        <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a> |
-                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i></a>
+                        <button class="btn btn-warning edit" data-id="@item.Id"><i class="bi bi-pencil-square"></i></button>
+                        |
+                        <button class="btn btn-primary details" data-id="@item.Id"><i class="bi bi-search"></i></button>
+                        |
+                        <button class="btn btn-danger delete" data-id="@item.Id"><i class="bi bi-trash"></i></button>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-
 </div>
 
+<div id="modal" class="modal fade" />
+
+@section scripts
+    {
+    <script>
+
+        $(function () {
+            $(".delete").click(function () {
+                var id = $(this).attr("data-id");
+                $("#modal").load("/Todo/Delete/" + id, function () {
+                    $("#modal").modal();
+                })
+            });
+
+
+            $(".details").click(function () {
+                var id = $(this).attr("data-id");
+                $("#modal").load("/Todo/Details/" + id, function () {
+                    $("#modal").modal();
+                })
+            });
+
+
+            $(".create").click(function () {
+                var id = $(this).attr("data-id");
+                $("#modal").load("/Todo/Create/", function () {
+                    $("#modal").modal();
+                })
+            });
+
+            $(".edit").click(function () {
+                var id = $(this).attr("data-id");
+                $("#modal").load("/Todo/Edit/" + id, function () {
+                    $("#modal").modal();
+                })
+            });
+
+        })
+    </script>
+    }

@@ -103,6 +103,7 @@ namespace MyTodoApp
             {
                 try
                 {
+                    todo.User = User.Identity.Name;
                     _context.Update(todo);
                     await _context.SaveChangesAsync();
                 }
